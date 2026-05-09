@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:5000/api',
-  // withCredentials: true, // REMOVE THIS for JWT
+  baseURL: 'https://workpay.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
