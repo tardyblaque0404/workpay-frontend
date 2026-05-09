@@ -1,0 +1,77 @@
+.page { max-width: 1100px; }
+
+.header { margin-bottom: 28px; }
+.title  { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+.date   { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px; margin-bottom: 28px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex; align-items: center; gap: 18px;
+  transition: transform 0.2s, border-color 0.2s;
+  animation: fadeIn 0.4s ease both;
+}
+.card:hover { transform: translateY(-2px); }
+@keyframes fadeIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: none; } }
+
+.cardIcon {
+  font-size: 26px; width: 52px; height: 52px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card.accent  .cardIcon { background: var(--accent-glow);              color: var(--accent);   }
+.card.success .cardIcon { background: rgba(74,222,128,0.1);            color: var(--success);  }
+.card.warning .cardIcon { background: rgba(251,191,36,0.1);            color: var(--warning);  }
+.card.info    .cardIcon { background: rgba(96,165,250,0.1);            color: var(--info);     }
+
+.card.accent  { border-color: rgba(124,109,250,0.25); }
+.card.success { border-color: rgba(74,222,128,0.2); }
+.card.warning { border-color: rgba(251,191,36,0.2); }
+.card.info    { border-color: rgba(96,165,250,0.2); }
+
+.cardLabel { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.cardValue { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
+
+.shimmer {
+  display: block; height: 28px; width: 60px; border-radius: 6px;
+  background: linear-gradient(90deg, var(--bg-hover) 25%, var(--border-light) 50%, var(--bg-hover) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.infoRow {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media (max-width: 700px) { .infoRow { grid-template-columns: 1fr; } }
+
+.infoCard {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+}
+.infoTitle { font-size: 15px; font-weight: 700; margin-bottom: 20px; }
+
+.actions { display: flex; flex-direction: column; gap: 10px; }
+.action {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: var(--radius-sm);
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  font-size: 14px; font-weight: 500; color: var(--text-secondary);
+  transition: all 0.15s;
+}
+.action:hover { background: var(--bg-hover); color: var(--text-primary); border-color: var(--accent); }
+.actionIcon { font-size: 18px; color: var(--accent); flex-shrink: 0; }
+
+.summary { display: flex; flex-direction: column; gap: 14px; }
+.summaryRow { display: flex; justify-content: space-between; align-items: center; }
+.summaryLabel { font-size: 13px; color: var(--text-muted); }
+.summaryValue { font-size: 14px; font-weight: 600; }
+.summaryValue.success { color: var(--success); }
+.summaryValue.accent  { color: var(--accent); }
