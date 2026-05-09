@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { MdBarChart, MdAccessTime, MdPayments, MdDownload } from 'react-icons/md';
 import api from '../api';

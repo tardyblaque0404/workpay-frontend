@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { MdPeople, MdAccessTime, MdPayments, MdTrendingUp } from 'react-icons/md';
 import api from '../api';
