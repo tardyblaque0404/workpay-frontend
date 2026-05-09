@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://workpay-uf12.onrender.com',
+  baseURL: 'https://workpay-uf12.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
